@@ -1,6 +1,5 @@
-import "./styles.css";
-import { CounterButton } from "@repo/ui/counter-button";
-import { Link } from "@repo/ui/link";
+import "@repo/design-system/styles/globals.css"
+import { Button } from "@repo/design-system/components/ui/button"
 
 function App() {
   return (
@@ -9,16 +8,20 @@ function App() {
         Admin <br />
         <span>Kitchen Sink</span>
       </h1>
-      <CounterButton />
+      <Button>Click me</Button>
       <p className="description">
         Built With{" "}
-        <Link href="https://turborepo.com" newTab>
-          Turborepo
-        </Link>
+        <Button asChild>
+          <a href="https://turborepo.com" target="_blank" rel="noopener noreferrer">
+            Turborepo
+          </a>
+        </Button>
         {" & "}
-        <Link href="https://vitejs.dev/" newTab>
-          Vite
-        </Link>
+        <Button asChild>
+          <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">
+            Vite
+          </a>
+        </Button>
       </p>
     </div>
   );

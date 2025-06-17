@@ -1,16 +1,16 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router";
 import App from "./app";
-import "./index.css";
+import "@repo/design-system/styles/globals.css"
 
-const el = document.getElementById("root");
-if (el) {
-  const root = createRoot(el);
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-} else {
+const root = document.getElementById("root");
+
+if (!root) {
   throw new Error("Could not find root element");
 }
+
+ReactDOM.createRoot(root).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
